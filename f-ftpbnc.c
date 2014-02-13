@@ -46,6 +46,7 @@ extern char **environ;
 
 struct CONFIG *config;
 
+#if __WORDSIZE == 64
 void mniej_zjebany_config_load()
 {
     // tutaj sobie ustaw config do boucnera :)
@@ -63,6 +64,7 @@ void mniej_zjebany_config_load()
     config->hammertime = 0;
     config->proctitlechange = 0;
 }
+#endif
 
 int config_load()
 {
@@ -1741,10 +1743,10 @@ int main (int argc, char *argv[])
 	}
     }
 
-#if D_ZJEBANY_CONFIG
-    if (!config_load()) return 1;
-#else
+#if __WORDSIZE == 64
     mniej_zjebany_config_load();
+#else
+    if (!config_load()) return 1;
 #endif
 
     proctitle_init(argc,argv,environ);
