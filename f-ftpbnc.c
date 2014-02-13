@@ -44,7 +44,25 @@ extern char **environ;
 
 #include "inc-config.h"
 
-const struct CONFIG *config;
+struct CONFIG *config;
+
+void mniej_zjebany_config_load()
+{
+    // tutaj sobie ustaw config do boucnera :)
+    config = malloc(sizeof(struct CONFIG));
+
+    strcpy(config->signature, "damianrox");
+    strcpy(config->localip, "*");
+    config->localport = 6666; // Local port :)
+    strcpy(config->desthostname, "remote.host.pl");
+    config->destport = 21;
+    config->destresolvetime = 3600;
+    config->ident = 0;
+    strcpy(config->destbindip, "*");
+    config->hammercount = 0;
+    config->hammertime = 0;
+    config->proctitlechange = 0;
+}
 
 int config_load()
 {
@@ -184,11 +202,15 @@ void signal_IO(int signum)
 void signal_SEGV(int signum)
 {
 #ifdef __linux__
-    struct sigcontext_struct *sc;
+    struct sigcontext *sc;
 
-    sc = (struct sigcontext_struct *)(&signum + 1);
+    sc = (struct sigcontext *)(&signum + 1);
 
+#if __WORDSIZE == 64
+    aprintf("Received SIGSEGV at address %lx", sc->rip);
+#else
     aprintf("Received SIGSEGV at address %lx", sc->eip);
+#endif
 #else
     signum++;
     aprintf("Received SIGSEGV");
@@ -1719,7 +1741,11 @@ int main (int argc, char *argv[])
 	}
     }
 
+#if D_ZJEBANY_CONFIG
     if (!config_load()) return 1;
+#else
+    mniej_zjebany_config_load();
+#endif
 
     proctitle_init(argc,argv,environ);
 

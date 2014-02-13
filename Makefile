@@ -24,7 +24,6 @@ f-ftpbnc.o: f-ftpbnc.c xtea-cipher.h inc-config.h
 
 f-ftpbnc: f-ftpbnc.o sha256.o
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ f-ftpbnc.o sha256.o $(LIBS)
-	strip -s $@
 
 mkconfig.o: mkconfig.c xtea-cipher.h
 	$(CC) $(CFLAGS) -c -o $@ $<
