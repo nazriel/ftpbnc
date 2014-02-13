@@ -42,7 +42,9 @@ extern char **environ;
 
 /* config data only saved encrypted in program image */
 
+#if __WORDSIZE == 32
 #include "inc-config.h"
+#endif
 
 struct CONFIG *config;
 
@@ -96,7 +98,9 @@ int config_load()
     config = (struct CONFIG*)configdataencrypt;
 
 #else
+#if __WORDSIZE == 32
 #error "No Configuration Available?"
+#endif
 #endif
 
     if (strncmp(config->signature, "f-ftpbnc", 9) == 0) return 1;
