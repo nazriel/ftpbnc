@@ -1,0 +1,66 @@
+            /\                          /\
+   ________/  \_      ______   ________/  \_ 
+   \__    /    /---O--\  __/---\_     /    /
+    |         /    |     \_     /         /        mkdir not war 
+    |___/____/_____|___________/____/____/
+                                          /\                        /\ -poyZ!
+    /\  ___       _________________      /  \   _______   _________/  \
+   /  \/ _/---O---\ _    \__     _/-.   (____)--\   __/___\_    __/    \.---O-
+__/    \_     |     /     /     /    \_/     |     __/     /    \      /    |_
+\_____________|__________/____________/______|____________/_____/\____      _/
++-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\_______|+
+|                       script and coding section                             |
++-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+|                                                                             |
+| [D A T E]                                                                   |
+|  2008-01-30                                                                 |
+|                                                                             |
+| [N A M E]                                                                   |
+|  f-ftpbnc                                                                   |
+|                                                                             |
+| [V E R S I O N]                                                             |
+|  1.6                                                                        |
+|                                                                             |
+| [F O R]                                                                     |
+|  glftpd, other ftps, women, unix, pc, power, room, world, freedom           |
+|                                                                             |
+| [T E S T E D  O N]                                                          |
+|  glFTPD v1.32 & v2.00                                                       |
+|                                                                             |
+| [C O D E R]                                                                 |
+|  F                                                                          |
+|                                                                             |
+| [I N F O]                                                                   |
+|  A fully functional ftp port "bouncer" for glftpd and compatible ftp-       |
+|  daemons. It is written from scratch and uses a special state-machine       |
+|  driven structure.                                                          |
+|                                                                             |
+| [F E A T U R E S]                                                           |
+|  runs in a single process. No forking your heads off.                       |
+|  very small memory requirements per connections.                            |
+|  no logging whatsoever of connections.                                      |
+|  supports ident requesting and passing it to glftpd                         |
+|  encrypted config data within the program image.                            |
+|  hammer protection based on multiple connects from the same ip.             |
+|  changes title shown in ps to indicate the number of current users.         |
+|  can also be used as a generic port forwarder by disabling ident lookup.    |
+|                                                                             |
+| [I N S T A L L]                                                             |
+|  see README on compiling issues                                             |
+|                                                                             |
+| [T O D O]                                                                   |
+|  Not known                                                                  |
+|                                                                             |
+| [C O N T A C T]                                                             |
+|  Web: www.high-society.at                                                   |
+|  Support forum: www.high-society.at/forum/                                  |
+|                                                                             |
+| [H I S T O R Y]                                                             |
+| v1.6 : fixed critical bug in buffering of client commands before IDNT       |
+| v1.5 : timeouts added for filtered ident ports on some isp                  |
+|        ident lookup can now be disabled                                     |
+| v1.1 : new setting of proctitle and fixed FreeBSD bug                       |
+| v1.0 : first public release                                                 |
++-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+|                              High Society 2008                              |
++-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
